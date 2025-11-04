@@ -1,6 +1,8 @@
 import streamlit as st
 
-# -- Define mappings --
+#############################
+# -- Choices and definitions
+#############################
 timeline_choices = [
     ('ASAP ⏱️', 'ASAP', "You need to close as quickly as possible—ideally within weeks—due to relocation, financial needs, or other pressing circumstances. This prioritizes fast options like investor sales or minimal-prep listings, potentially at a trade-off for top dollar."),
     ('Typical 📅', 'Typical', "You're aiming for a standard market timeline, around 1-3 months from listing to close, allowing time for effective marketing and showings without unnecessary delays."),
@@ -17,7 +19,9 @@ condition_choices = [
     ('Showcase ✨', 'Showcase', "The home is either newer construction or recently renovated, and impeccably maintained inside and out. Its contemporary finishes are tasteful and inviting—and might already be staged with the owner's stylish furnishings and curated décor. Its emotionally captivating presentation is media-ready and primed to attract top market attention from discerning buyers.")
 ]
 
-# Define the recommendation logic based on the provided 3x3x3 matrix
+########################################
+# -- Full recommendations matrix starts
+########################################
 recommendations = {
     ('ASAP', 'Minimal', 'Needs Work'): {
         'primary': 'Cash',
@@ -39,7 +43,7 @@ recommendations = {
     },
     ('ASAP', 'Balanced', 'Needs Work'): {
         'primary': 'Core',
-        'primary_desc': "Marketing \"as is\" to the general public without fix-up may be sufficient to bring an acceptable offer—and likely higher than promoting it solely to investors.",
+        'primary_desc': 'Marketing "as is" to the general public without fix-up may be sufficient to bring an acceptable offer—and likely higher than promoting it solely to investors.',
         'alt': 'Cosmetic',
         'alt_desc': "Selective updating plus strategic public marketing adds time, but is less involved than a Comprehensive renovation and will likely improve the buyer pool—as well as the purchase price."
     },
@@ -183,6 +187,10 @@ recommendations = {
     }
 }
 
+######################################
+# -- App display logic and layout
+######################################
+
 st.title("SELVO – Home of the Five-Fee Fit™")
 st.subheader("Self-Assessment: Which Selvo Listing Tier Fits Me Best?")
 
@@ -193,53 +201,36 @@ with st.expander("Tier Descriptions", expanded=True):
 - **(3%) Classic** – Showcase-prep guidance with upgraded media and ad tracking.
 - **(4%) Cosmetic** – Advisor-coordinated polishing, updating, and staging.
 - **(5%) Comprehensive** – Expert support for strategic ROI-driven renovations.
-""")
+    """)
     st.write("Percentages (%) apply to Selvo listing services only. While a buyer is responsible for compensating their own agent, their offer may include requesting the seller to offset that amount. This is always optional and negotiable—consult your licensed Selvo agent on the pros and cons.")
 
-## --- Timeline ---
-st.markdown("#### Timeline: How fast would you like to sell your home?")
-timeline = st.select_slider(
-    "Select your timeline preference:",
-    options=[label for label, _, _ in timeline_choices],
-    value=timeline_choices[0][0]
-)
-timeline_cols = st.columns(3)
-for i, (label, key, desc) in enumerate(timeline_choices):
-    timeline_cols[i].markdown(f"**{label}**")
-    with timeline_cols[i].expander("?", expanded=False):
-        timeline_cols[i].markdown(desc)
+def slider_with_definitions(header, choices, slider_key):
+    st.markdown(f"#### {header}")
+    selected = st.select_slider(
+        f"Select your {slider_key.lower()} option:",
+        options=[label for label, _, _ in choices],
+        value=choices[0][0],
+        key=slider_key
+    )
+    cols = st.columns(3)
+    for i, (label, key, desc) in enumerate(choices):
+        # The label appears above the "?" expander for clarity
+        cols[i].markdown(f"**{label}**")
+        with cols[i].expander("?", expanded=False):
+            cols[i].markdown(desc)
+    return selected
 
-## --- Involvement ---
-st.markdown("#### Involvement: How much disruption are you willing to tolerate?")
-involvement = st.select_slider(
-    "Select your involvement level:",
-    options=[label for label, _, _ in involvement_choices],
-    value=involvement_choices[0][0]
-)
-involve_cols = st.columns(3)
-for i, (label, key, desc) in enumerate(involvement_choices):
-    involve_cols[i].markdown(f"**{label}**")
-    with involve_cols[i].expander("?", expanded=False):
-        involve_cols[i].markdown(desc)
+timeline = slider_with_definitions("Timeline: How fast would you like to sell your home?", timeline_choices, "Timeline")
+involvement = slider_with_definitions("Involvement: How much disruption are you willing to tolerate?", involvement_choices, "Involvement")
+condition = slider_with_definitions("Condition: What's the current state of your home?", condition_choices, "Condition")
 
-## --- Condition ---
-st.markdown("#### Condition: What's the current state of your home?")
-condition = st.select_slider(
-    "Select your home's condition:",
-    options=[label for label, _, _ in condition_choices],
-    value=condition_choices[0][0]
-)
-condition_cols = st.columns(3)
-for i, (label, key, desc) in enumerate(condition_choices):
-    condition_cols[i].markdown(f"**{label}**")
-    with condition_cols[i].expander("?", expanded=False):
-        condition_cols[i].markdown(desc)
-
-## --- Recommendation Display ---
+#################################
+# -- Get Recommendation
+#################################
 if st.button("Get Recommendation"):
-    timeline_key = [key for label, key, _ in timeline_choices if label == timeline][0]
-    involvement_key = [key for label, key, _ in involvement_choices if label == involvement][0]
-    condition_key = [key for label, key, _ in condition_choices if label == condition][0]
+    timeline_key = [key for (label, key, _) in timeline_choices if label == timeline][0]
+    involvement_key = [key for (label, key, _) in involvement_choices if label == involvement][0]
+    condition_key = [key for (label, key, _) in condition_choices if label == condition][0]
     rec = recommendations.get((timeline_key, involvement_key, condition_key), None)
     if rec:
         st.success("Your Selvo Sliders Recommendation")
