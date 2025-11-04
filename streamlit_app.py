@@ -207,7 +207,7 @@ def slider_with_expandable_choices(header, choices, slider_key):
     cols = st.columns(3)
     for i, (label, key, desc) in enumerate(choices):
         with cols[i].expander(label, expanded=False):
-            cols[i].markdown(desc)
+            st.markdown(desc)
     return selected
 
 timeline = slider_with_expandable_choices("Timeline: How fast would you like to sell your home?", timeline_choices, "Timeline")
@@ -217,11 +217,4 @@ condition = slider_with_expandable_choices("Condition: What's the current state 
 if st.button("Get Recommendation"):
     timeline_key = [key for (label, key, _) in timeline_choices if label == timeline][0]
     involvement_key = [key for (label, key, _) in involvement_choices if label == involvement][0]
-    condition_key = [key for (label, key, _) in condition_choices if label == condition][0]
-    rec = recommendations.get((timeline_key, involvement_key, condition_key), None)
-    if rec:
-        st.success("Your Selvo Sliders Recommendation")
-        st.markdown(f"**Primary Option: {rec['primary']}**\n\n{rec['primary_desc']}\n\n**Alternative Option: {rec['alt']}**\n\n{rec['alt_desc']}")
-        st.info("Next Steps: Every home and market is unique. [Schedule a free consultation](https://x.ai/grok) with a licensed Selvo agent!")
-    else:
-        st.error("No recommendation found for this combination.")
+   
