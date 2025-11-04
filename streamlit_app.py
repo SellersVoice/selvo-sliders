@@ -21,165 +21,165 @@ condition_choices = [
 recommendations = {
     ('ASAP', 'Minimal', 'Needs Work'): {
         'primary': 'Cash',
-        'primary_desc': 'Off-MLS promotion in as-is condition to private investors is the quickest—although usually lower net—option when a home needs more work than a seller is able (or desires) to accomplish.',
+        'primary_desc': "Off-MLS promotion in as-is condition to private investors is the quickest—although usually lower net—option when a home needs more work than a seller is able (or desires) to accomplish.",
         'alt': 'Core',
-        'alt_desc': 'MLS syndication of pro photos to a wider audience, rather than just investors, will likely increase interest if you\'re willing to spend some extra time and money for a possibly higher net.'
+        'alt_desc': "MLS syndication of pro photos to a wider audience, rather than just investors, will likely increase interest if you're willing to spend some extra time and money for a possibly higher net."
     },
     ('ASAP', 'Minimal', 'Marketable'): {
         'primary': 'Core',
-        'primary_desc': 'Although selling to an investor can be quick, a marketable-condition home deserves a chance at a higher offer from a broader buyer pool via limited showing(s) and MLS syndication of pro photos.',
+        'primary_desc': "Although selling to an investor can be quick, a marketable-condition home deserves a chance at a higher offer from a broader buyer pool via limited showing(s) and MLS syndication of pro photos.",
         'alt': 'Cash',
-        'alt_desc': 'Investor-only promotion is generally faster than public marketing, though could result in a lower net than a marketable-condition home deserves.'
+        'alt_desc': "Investor-only promotion is generally faster than public marketing, though could result in a lower net than a marketable-condition home deserves."
     },
     ('ASAP', 'Minimal', 'Showcase'): {
         'primary': 'Classic',
-        'primary_desc': 'MLS syndication of upgraded media combined with enhanced marketing leverages the emotional appeal of a home in showcase condition.',
+        'primary_desc': "MLS syndication of upgraded media combined with enhanced marketing leverages the emotional appeal of a home in showcase condition.",
         'alt': 'Core',
-        'alt_desc': 'Pro photos in the MLS plus a limited showing event could suffice for a home that\'s pristine and desirable.'
+        'alt_desc': "Pro photos in the MLS plus a limited showing event could suffice for a home that's pristine and desirable."
     },
     ('ASAP', 'Balanced', 'Needs Work'): {
         'primary': 'Core',
-        'primary_desc': 'Marketing "as is" to the general public without fix-up may be sufficient to bring an acceptable offer—and likely higher than promoting it solely to investors.',
+        'primary_desc': "Marketing \"as is\" to the general public without fix-up may be sufficient to bring an acceptable offer—and likely higher than promoting it solely to investors.",
         'alt': 'Cosmetic',
-        'alt_desc': 'Selective updating plus strategic public marketing adds time, but is less involved than a Comprehensive renovation and will likely improve the buyer pool—as well as the purchase price.'
+        'alt_desc': "Selective updating plus strategic public marketing adds time, but is less involved than a Comprehensive renovation and will likely improve the buyer pool—as well as the purchase price."
     },
     ('ASAP', 'Balanced', 'Marketable'): {
         'primary': 'Core',
-        'primary_desc': 'Pro photos in the MLS plus a limited showing event could suffice for a marketable-condition home.',
+        'primary_desc': "Pro photos in the MLS plus a limited showing event could suffice for a marketable-condition home.",
         'alt': 'Classic',
-        'alt_desc': 'A marketable-condition home promoted in the MLS with upgraded media and enhanced advertising will likely result in a better offer than Core photos alone.'
+        'alt_desc': "A marketable-condition home promoted in the MLS with upgraded media and enhanced advertising will likely result in a better offer than Core photos alone."
     },
     ('ASAP', 'Balanced', 'Showcase'): {
         'primary': 'Classic',
-        'primary_desc': 'MLS syndication of upgraded media combined with enhanced marketing leverages the emotional appeal of a home in showcase condition.',
+        'primary_desc': "MLS syndication of upgraded media combined with enhanced marketing leverages the emotional appeal of a home in showcase condition.",
         'alt': 'Core',
-        'alt_desc': 'Pro photos in the MLS plus a limited showing event could suffice for a home that\'s pristine and desirable.'
+        'alt_desc': "Pro photos in the MLS plus a limited showing event could suffice for a home that's pristine and desirable."
     },
     ('ASAP', 'High', 'Needs Work'): {
         'primary': 'Cosmetic',
-        'primary_desc': 'Selective updating plus strategic public marketing adds time, but is less involved than a Comprehensive renovation and will likely improve the buyer pool—as well as the purchase price.',
+        'primary_desc': "Selective updating plus strategic public marketing adds time, but is less involved than a Comprehensive renovation and will likely improve the buyer pool—as well as the purchase price.",
         'alt': 'Core',
-        'alt_desc': 'Marketing to the general public without fix-up may be sufficient to bring an acceptable offer—and likely higher than promoting it solely to investors.'
+        'alt_desc': "Marketing to the general public without fix-up may be sufficient to bring an acceptable offer—and likely higher than promoting it solely to investors."
     },
     ('ASAP', 'High', 'Marketable'): {
         'primary': 'Classic',
-        'primary_desc': 'A marketable-condition home promoted with upgraded media and enhanced advertising will likely result in a higher offer than with Core photos alone.',
+        'primary_desc': "A marketable-condition home promoted with upgraded media and enhanced advertising will likely result in a higher offer than with Core photos alone.",
         'alt': 'Cosmetic',
-        'alt_desc': 'If it\'s been awhile since the home was last updated, a selective contemporary refresh could prove worthwhile if time and budget permits.'
+        'alt_desc': "If it's been awhile since the home was last updated, a selective contemporary refresh could prove worthwhile if time and budget permits."
     },
     ('ASAP', 'High', 'Showcase'): {
         'primary': 'Classic',
-        'primary_desc': 'MLS syndication of upgraded media combined with enhanced marketing leverages the emotional appeal of a home in showcase condition.',
+        'primary_desc': "MLS syndication of upgraded media combined with enhanced marketing leverages the emotional appeal of a home in showcase condition.",
         'alt': 'Core',
-        'alt_desc': 'Pro photos in the MLS plus a limited showing event could suffice for a home that\'s pristine and desirable.'
+        'alt_desc': "Pro photos in the MLS plus a limited showing event could suffice for a home that's pristine and desirable."
     },
     ('Typical', 'Minimal', 'Needs Work'): {
         'primary': 'Cash',
-        'primary_desc': 'As-is, off-MLS promotion to private investors is the least involved—although usually lower net—option when a home needs more work than a seller is able (or desires) to accomplish.',
+        'primary_desc': "As-is, off-MLS promotion to private investors is the least involved—although usually lower net—option when a home needs more work than a seller is able (or desires) to accomplish.",
         'alt': 'Cosmetic',
-        'alt_desc': 'If as-is investor offers won\'t meet your goal, selective updating plus strategic public marketing is less involved than a Comprehensive renovation and will likely improve the buyer pool—as well as the purchase price.'
+        'alt_desc': "If as-is investor offers won't meet your goal, selective updating plus strategic public marketing is less involved than a Comprehensive renovation and will likely improve the buyer pool—as well as the purchase price."
     },
     ('Typical', 'Minimal', 'Marketable'): {
         'primary': 'Classic',
-        'primary_desc': 'A marketable-condition home promoted with upgraded media and enhanced advertising will likely result in a higher offer than with Core photos alone.',
+        'primary_desc': "A marketable-condition home promoted with upgraded media and enhanced advertising will likely result in a higher offer than with Core photos alone.",
         'alt': 'Core',
-        'alt_desc': 'Pro photos in the MLS plus a limited showing event could suffice for a marketable-condition home.'
+        'alt_desc': "Pro photos in the MLS plus a limited showing event could suffice for a marketable-condition home."
     },
     ('Typical', 'Minimal', 'Showcase'): {
         'primary': 'Classic',
-        'primary_desc': 'MLS syndication of upgraded media combined with enhanced marketing leverages the emotional appeal of a home in showcase condition.',
+        'primary_desc': "MLS syndication of upgraded media combined with enhanced marketing leverages the emotional appeal of a home in showcase condition.",
         'alt': 'Core',
-        'alt_desc': 'Pro photos in the MLS plus a limited showing event could suffice for a home that\'s pristine and desirable.'
+        'alt_desc': "Pro photos in the MLS plus a limited showing event could suffice for a home that's pristine and desirable."
     },
     ('Typical', 'Balanced', 'Needs Work'): {
         'primary': 'Cosmetic',
-        'primary_desc': 'Selective updating plus strategic public marketing adds time, but is less involved than a Comprehensive renovation and will likely improve the buyer pool—as well as the purchase price.',
+        'primary_desc': "Selective updating plus strategic public marketing adds time, but is less involved than a Comprehensive renovation and will likely improve the buyer pool—as well as the purchase price.",
         'alt': 'Comprehensive',
-        'alt_desc': 'With enough funds, time, and desire, a thorough renovation is worth considering if the ROI justifies.'
+        'alt_desc': "With enough funds, time, and desire, a thorough renovation is worth considering if the ROI justifies."
     },
     ('Typical', 'Balanced', 'Marketable'): {
         'primary': 'Classic',
-        'primary_desc': 'A marketable-condition home promoted with upgraded media and enhanced advertising will likely result in a higher offer than with Core photos alone.',
+        'primary_desc': "A marketable-condition home promoted with upgraded media and enhanced advertising will likely result in a higher offer than with Core photos alone.",
         'alt': 'Cosmetic',
-        'alt_desc': 'If it\'s been awhile since the home was last updated, a selective contemporary refresh could prove worthwhile if time and budget permits.'
+        'alt_desc': "If it's been awhile since the home was last updated, a selective contemporary refresh could prove worthwhile if time and budget permits."
     },
     ('Typical', 'Balanced', 'Showcase'): {
         'primary': 'Classic',
-        'primary_desc': 'MLS syndication of upgraded media combined with enhanced marketing leverages the emotional appeal of a home in showcase condition.',
+        'primary_desc': "MLS syndication of upgraded media combined with enhanced marketing leverages the emotional appeal of a home in showcase condition.",
         'alt': 'Core',
-        'alt_desc': 'Pro photos in the MLS plus a limited showing event could suffice for a home that\'s pristine and desirable.'
+        'alt_desc': "Pro photos in the MLS plus a limited showing event could suffice for a home that's pristine and desirable."
     },
     ('Typical', 'High', 'Needs Work'): {
         'primary': 'Comprehensive',
-        'primary_desc': 'With enough funds, time, and desire, a thorough renovation is worth considering if the ROI justifies.',
+        'primary_desc': "With enough funds, time, and desire, a thorough renovation is worth considering if the ROI justifies.",
         'alt': 'Cosmetic',
-        'alt_desc': 'Selective updating plus strategic public marketing is less involved than a Comprehensive renovation and will likely improve the buyer pool—as well as the purchase price—over selling as-is.'
+        'alt_desc': "Selective updating plus strategic public marketing is less involved than a Comprehensive renovation and will likely improve the buyer pool—as well as the purchase price—over selling as-is."
     },
     ('Typical', 'High', 'Marketable'): {
         'primary': 'Cosmetic',
-        'primary_desc': 'If it\'s been awhile since the home was last updated, a selective contemporary refresh could prove worthwhile if time and budget permits.',
+        'primary_desc': "If it's been awhile since the home was last updated, a selective contemporary refresh could prove worthwhile if time and budget permits.",
         'alt': 'Comprehensive',
-        'alt_desc': 'With enough funds, time, and desire, a thorough renovation is worth considering if the ROI justifies.'
+        'alt_desc': "With enough funds, time, and desire, a thorough renovation is worth considering if the ROI justifies."
     },
     ('Typical', 'High', 'Showcase'): {
         'primary': 'Classic',
-        'primary_desc': 'MLS syndication of upgraded media combined with enhanced marketing leverages the emotional appeal of a home in showcase condition.',
+        'primary_desc': "MLS syndication of upgraded media combined with enhanced marketing leverages the emotional appeal of a home in showcase condition.",
         'alt': 'Core',
-        'alt_desc': 'Pro photos in the MLS plus a limited showing event could suffice for a home that\'s pristine and desirable.'
+        'alt_desc': "Pro photos in the MLS plus a limited showing event could suffice for a home that's pristine and desirable."
     },
     ('Flexible', 'Minimal', 'Needs Work'): {
         'primary': 'Cash',
-        'primary_desc': 'Off-MLS promotion in as-is condition to private investors is the quickest—although usually lower net—option when a home needs more work than a seller is able (or desires) to accomplish.',
+        'primary_desc': "Off-MLS promotion in as-is condition to private investors is the quickest—although usually lower net—option when a home needs more work than a seller is able (or desires) to accomplish.",
         'alt': 'Cosmetic',
-        'alt_desc': 'Selective updating plus strategic public marketing is less involved than a Comprehensive renovation and will likely improve the buyer pool—as well as the purchase price—over selling as-is.'
+        'alt_desc': "Selective updating plus strategic public marketing is less involved than a Comprehensive renovation and will likely improve the buyer pool—as well as the purchase price—over selling as-is."
     },
     ('Flexible', 'Minimal', 'Marketable'): {
         'primary': 'Classic',
-        'primary_desc': 'A marketable-condition home promoted with upgraded media and enhanced advertising will likely result in a higher offer than with Core photos alone.',
+        'primary_desc': "A marketable-condition home promoted with upgraded media and enhanced advertising will likely result in a higher offer than with Core photos alone.",
         'alt': 'Core',
-        'alt_desc': 'Pro photos in the MLS plus a limited showing event could suffice for a marketable-condition home.'
+        'alt_desc': "Pro photos in the MLS plus a limited showing event could suffice for a marketable-condition home."
     },
     ('Flexible', 'Minimal', 'Showcase'): {
         'primary': 'Classic',
-        'primary_desc': 'MLS syndication of upgraded media combined with enhanced marketing leverages the emotional appeal of a home in showcase condition.',
+        'primary_desc': "MLS syndication of upgraded media combined with enhanced marketing leverages the emotional appeal of a home in showcase condition.",
         'alt': 'Core',
-        'alt_desc': 'Pro photos in the MLS plus a limited showing event could suffice for a home that\'s pristine and desirable.'
+        'alt_desc': "Pro photos in the MLS plus a limited showing event could suffice for a home that's pristine and desirable."
     },
     ('Flexible', 'Balanced', 'Needs Work'): {
         'primary': 'Cosmetic',
-        'primary_desc': 'Selective updating plus strategic public marketing is less involved than a Comprehensive renovation and will likely improve the buyer pool—as well as the purchase price—over selling as-is.',
+        'primary_desc': "Selective updating plus strategic public marketing is less involved than a Comprehensive renovation and will likely improve the buyer pool—as well as the purchase price—over selling as-is.",
         'alt': 'Comprehensive',
-        'alt_desc': 'With enough funds, time, and desire, a thorough renovation is worth considering if the ROI justifies.'
+        'alt_desc': "With enough funds, time, and desire, a thorough renovation is worth considering if the ROI justifies."
     },
     ('Flexible', 'Balanced', 'Marketable'): {
         'primary': 'Classic',
-        'primary_desc': 'A marketable-condition home promoted with upgraded media and enhanced advertising will likely result in a higher offer than with Core photos alone.',
+        'primary_desc': "A marketable-condition home promoted with upgraded media and enhanced advertising will likely result in a higher offer than with Core photos alone.",
         'alt': 'Cosmetic',
-        'alt_desc': 'If it\'s been awhile since the home was last updated, a selective contemporary refresh could prove worthwhile if time and budget permits.'
+        'alt_desc': "If it's been awhile since the home was last updated, a selective contemporary refresh could prove worthwhile if time and budget permits."
     },
     ('Flexible', 'Balanced', 'Showcase'): {
         'primary': 'Classic',
-        'primary_desc': 'MLS syndication of upgraded media combined with enhanced marketing leverages the emotional appeal of a home in showcase condition.',
+        'primary_desc': "MLS syndication of upgraded media combined with enhanced marketing leverages the emotional appeal of a home in showcase condition.",
         'alt': 'Core',
-        'alt_desc': 'Pro photos in the MLS plus a limited showing event could suffice for a home that\'s pristine and desirable.'
+        'alt_desc': "Pro photos in the MLS plus a limited showing event could suffice for a home that's pristine and desirable."
     },
     ('Flexible', 'High', 'Needs Work'): {
         'primary': 'Comprehensive',
-        'primary_desc': 'With enough funds, time, and desire, a thorough renovation is worth considering if the ROI justifies.',
+        'primary_desc': "With enough funds, time, and desire, a thorough renovation is worth considering if the ROI justifies.",
         'alt': 'Cosmetic',
-        'alt_desc': 'Selective updating plus strategic public marketing is less involved than a Comprehensive renovation and will likely improve the buyer pool—as well as the purchase price—over selling as-is.'
+        'alt_desc': "Selective updating plus strategic public marketing is less involved than a Comprehensive renovation and will likely improve the buyer pool—as well as the purchase price—over selling as-is."
     },
     ('Flexible', 'High', 'Marketable'): {
         'primary': 'Cosmetic',
-        'primary_desc': 'If it\'s been awhile since the home was last updated, a selective contemporary refresh could prove worthwhile if time and budget permits.',
+        'primary_desc': "If it's been awhile since the home was last updated, a selective contemporary refresh could prove worthwhile if time and budget permits.",
         'alt': 'Comprehensive',
-        'alt_desc': 'With enough funds, time, and desire, a thorough renovation is worth considering if the ROI justifies.'
+        'alt_desc': "With enough funds, time, and desire, a thorough renovation is worth considering if the ROI justifies."
     },
     ('Flexible', 'High', 'Showcase'): {
         'primary': 'Classic',
-        'primary_desc': 'MLS syndication of upgraded media combined with enhanced marketing leverages the emotional appeal of a home in showcase condition.',
+        'primary_desc': "MLS syndication of upgraded media combined with enhanced marketing leverages the emotional appeal of a home in showcase condition.",
         'alt': 'Core',
-        'alt_desc': 'Pro photos in the MLS plus a limited showing event could suffice for a home that\'s pristine and desirable.'
+        'alt_desc': "Pro photos in the MLS plus a limited showing event could suffice for a home that's pristine and desirable."
     }
 }
 
@@ -194,48 +194,52 @@ with st.expander("Tier Descriptions", expanded=True):
 - **(4%) Cosmetic** – Advisor-coordinated polishing, updating, and staging.
 - **(5%) Comprehensive** – Expert support for strategic ROI-driven renovations.
 """)
-    st.write("Percentages (%) apply to Selvo listing services only... (rest of your description here)")
+    st.write("Percentages (%) apply to Selvo listing services only. While a buyer is responsible for compensating their own agent, their offer may include requesting the seller to offset that amount. This is always optional and negotiable—consult your licensed Selvo agent on the pros and cons.")
 
-## --- Timeline Slider & Explanations ---
+## --- Timeline ---
 st.markdown("#### Timeline: How fast would you like to sell your home?")
-for label, _, desc in timeline_choices:
-    st.markdown(f"- **{label}**: {desc}")
-
-timeline_selected = st.select_slider(
+timeline = st.select_slider(
     "Select your timeline preference:",
     options=[label for label, _, _ in timeline_choices],
     value=timeline_choices[0][0]
 )
+timeline_cols = st.columns(3)
+for i, (label, key, desc) in enumerate(timeline_choices):
+    timeline_cols[i].markdown(f"**{label}**")
+    with timeline_cols[i].expander("?", expanded=False):
+        timeline_cols[i].markdown(desc)
 
-## --- Involvement Slider & Explanations ---
+## --- Involvement ---
 st.markdown("#### Involvement: How much disruption are you willing to tolerate?")
-for label, _, desc in involvement_choices:
-    st.markdown(f"- **{label}**: {desc}")
-
-involvement_selected = st.select_slider(
+involvement = st.select_slider(
     "Select your involvement level:",
     options=[label for label, _, _ in involvement_choices],
     value=involvement_choices[0][0]
 )
+involve_cols = st.columns(3)
+for i, (label, key, desc) in enumerate(involvement_choices):
+    involve_cols[i].markdown(f"**{label}**")
+    with involve_cols[i].expander("?", expanded=False):
+        involve_cols[i].markdown(desc)
 
-## --- Condition Slider & Explanations ---
+## --- Condition ---
 st.markdown("#### Condition: What's the current state of your home?")
-for label, _, desc in condition_choices:
-    st.markdown(f"- **{label}**: {desc}")
-
-condition_selected = st.select_slider(
+condition = st.select_slider(
     "Select your home's condition:",
     options=[label for label, _, _ in condition_choices],
     value=condition_choices[0][0]
 )
+condition_cols = st.columns(3)
+for i, (label, key, desc) in enumerate(condition_choices):
+    condition_cols[i].markdown(f"**{label}**")
+    with condition_cols[i].expander("?", expanded=False):
+        condition_cols[i].markdown(desc)
 
 ## --- Recommendation Display ---
 if st.button("Get Recommendation"):
-    # Map labels back to keys for lookup
-    timeline_key = [key for label, key, _ in timeline_choices if label == timeline_selected][0]
-    involvement_key = [key for label, key, _ in involvement_choices if label == involvement_selected][0]
-    condition_key = [key for label, key, _ in condition_choices if label == condition_selected][0]
-
+    timeline_key = [key for label, key, _ in timeline_choices if label == timeline][0]
+    involvement_key = [key for label, key, _ in involvement_choices if label == involvement][0]
+    condition_key = [key for label, key, _ in condition_choices if label == condition][0]
     rec = recommendations.get((timeline_key, involvement_key, condition_key), None)
     if rec:
         st.success("Your Selvo Sliders Recommendation")
