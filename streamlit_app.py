@@ -2,19 +2,19 @@ import streamlit as st
 
 # -- Define mappings --
 timeline_choices = [
-    ('ASAP ⏱️', 'ASAP', "You need to close as quickly as possible—ideally within weeks…"),
-    ('Typical 📅', 'Typical', "You're aiming for a standard market timeline, around 1-3 months…"),
-    ('Flexible 🌟', 'Flexible', "Time is on your side…"),
+    ('ASAP ⏱️', 'ASAP', "You need to close as quickly as possible—ideally within weeks—due to relocation, financial needs, or other pressing circumstances. This prioritizes fast options like investor sales or minimal-prep listings, potentially at a trade-off for top dollar."),
+    ('Typical 📅', 'Typical', "You're aiming for a standard market timeline, around 1-3 months from listing to close, allowing time for effective marketing and showings without unnecessary delays."),
+    ('Flexible 🌟', 'Flexible', "Time is on your side—you’re open to 3+ months if it means strategic enhancements or waiting for the best offer, maximizing value through broader exposure or targeted improvements.")
 ]
 involvement_choices = [
-    ('Minimal 🧘', 'Minimal', "You prefer the least disruption possible…"),
-    ('Balanced ⚖️', 'Balanced', "You're okay with moderate inconvenience…"),
-    ('High 🔨', 'High', "You're willing to embrace higher disruption…"),
+    ('Minimal 🧘', 'Minimal', "You prefer the least disruption possible—limited showings, no major changes to your home, and a hands-off process to keep your daily life uninterrupted."),
+    ('Balanced ⚖️', 'Balanced', "You're okay with moderate inconvenience, like occasional showings or light preparations, if it leads to better results without overwhelming your schedule."),
+    ('High 🔨', 'High', "You're willing to embrace higher disruption—such as extended access for updates, staging, or more frequent viewings—for the potential of significant ROI and a premium sale price.")
 ]
 condition_choices = [
-    ('Needs Work 🛠️', 'Needs Work', "The home hasn’t been cosmetically updated in years…"),
-    ('Marketable 🏡', 'Marketable', "Home has undergone selective improvements and is move-in ready…"),
-    ('Showcase ✨', 'Showcase', "Newer construction or renovated, impeccably maintained…"),
+    ('Needs Work 🛠️', 'Needs Work', "The home hasn’t been cosmetically updated in many years, and likely needs repairs or thorough cleaning due to deferred maintenance. If not already vacant, it may also contain an overabundance of household goods and personal items."),
+    ('Marketable 🏡', 'Marketable', "The home has undergone selective improvements in recent years, and is clean and functionally appealing to most buyers. While it is maintained and move-in ready as is, additional enhancements could elevate its presentation to help it compete with newer or renovated homes."),
+    ('Showcase ✨', 'Showcase', "The home is either newer construction or recently renovated, and impeccably maintained inside and out. Its contemporary finishes are tasteful and inviting—and might already be staged with the owner's stylish furnishings and curated décor. Its emotionally captivating presentation is media-ready and primed to attract top market attention from discerning buyers.")
 ]
 
 # Define the recommendation logic based on the provided 3x3x3 matrix
@@ -183,53 +183,60 @@ recommendations = {
     }
 }
 
-# -- Streamlit UI --
-
 st.title("SELVO – Home of the Five-Fee Fit™")
 st.subheader("Self-Assessment: Which Selvo Listing Tier Fits Me Best?")
 
 with st.expander("Tier Descriptions", expanded=True):
     st.markdown("""
-    - **(1%) Cash** – Fast, as-is promotion to multiple investors via private network.
-    - **(2%) Core** – Broad MLS syndication plus essential marketing exposure.
-    - **(3%) Classic** – Showcase-prep guidance with upgraded media and ad tracking.
-    - **(4%) Cosmetic** – Advisor-coordinated polishing, updating, and staging.
-    - **(5%) Comprehensive** – Expert support for strategic ROI-driven renovations.
-    """)
+- **(1%) Cash** – Fast, as-is promotion to multiple investors via private network.
+- **(2%) Core** – Broad MLS syndication plus essential marketing exposure.
+- **(3%) Classic** – Showcase-prep guidance with upgraded media and ad tracking.
+- **(4%) Cosmetic** – Advisor-coordinated polishing, updating, and staging.
+- **(5%) Comprehensive** – Expert support for strategic ROI-driven renovations.
+""")
     st.write("Percentages (%) apply to Selvo listing services only... (rest of your description here)")
 
-# -- Sliders as select_slider with tooltips --
-def choice_label(choices):
-    return [f"{name}" for name, key, tooltip in choices]
+## --- Timeline Slider & Explanations ---
+st.markdown("#### Timeline: How fast would you like to sell your home?")
+for label, _, desc in timeline_choices:
+    st.markdown(f"- **{label}**: {desc}")
 
-timeline = st.select_slider(
-    "Timeline:",
-    options=choice_label(timeline_choices),
-    value=choice_label(timeline_choices)[0],
-    help="How fast would you like to sell your home?"
+timeline_selected = st.select_slider(
+    "Select your timeline preference:",
+    options=[label for label, _, _ in timeline_choices],
+    value=timeline_choices[0][0]
 )
 
-involvement = st.select_slider(
-    "Involvement:",
-    options=choice_label(involvement_choices),
-    value=choice_label(involvement_choices)[0],
-    help="How much disruption are you willing to tolerate?"
+## --- Involvement Slider & Explanations ---
+st.markdown("#### Involvement: How much disruption are you willing to tolerate?")
+for label, _, desc in involvement_choices:
+    st.markdown(f"- **{label}**: {desc}")
+
+involvement_selected = st.select_slider(
+    "Select your involvement level:",
+    options=[label for label, _, _ in involvement_choices],
+    value=involvement_choices[0][0]
 )
 
-condition = st.select_slider(
-    "Condition:",
-    options=choice_label(condition_choices),
-    value=choice_label(condition_choices)[0],
-    help="What's the current state of your home?"
+## --- Condition Slider & Explanations ---
+st.markdown("#### Condition: What's the current state of your home?")
+for label, _, desc in condition_choices:
+    st.markdown(f"- **{label}**: {desc}")
+
+condition_selected = st.select_slider(
+    "Select your home's condition:",
+    options=[label for label, _, _ in condition_choices],
+    value=condition_choices[0][0]
 )
 
-if st.button("Get Recommendation", type="primary"):
-    # Look up the mapped values:
-    timeline_value = [key for lbl, key, tip in timeline_choices if lbl == timeline][0]
-    involvement_value = [key for lbl, key, tip in involvement_choices if lbl == involvement][0]
-    condition_value = [key for lbl, key, tip in condition_choices if lbl == condition][0]
+## --- Recommendation Display ---
+if st.button("Get Recommendation"):
+    # Map labels back to keys for lookup
+    timeline_key = [key for label, key, _ in timeline_choices if label == timeline_selected][0]
+    involvement_key = [key for label, key, _ in involvement_choices if label == involvement_selected][0]
+    condition_key = [key for label, key, _ in condition_choices if label == condition_selected][0]
 
-    rec = recommendations.get((timeline_value, involvement_value, condition_value))
+    rec = recommendations.get((timeline_key, involvement_key, condition_key), None)
     if rec:
         st.success("Your Selvo Sliders Recommendation")
         st.markdown(f"**Primary Option: {rec['primary']}**\n\n{rec['primary_desc']}\n\n**Alternative Option: {rec['alt']}**\n\n{rec['alt_desc']}")
