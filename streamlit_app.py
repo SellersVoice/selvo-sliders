@@ -1,8 +1,6 @@
 import streamlit as st
 
-#############################
-# -- Choices and definitions
-#############################
+# Choices and definitions
 timeline_choices = [
     ('ASAP ⏱️', 'ASAP', "You need to close as quickly as possible—ideally within weeks—due to relocation, financial needs, or other pressing circumstances. This prioritizes fast options like investor sales or minimal-prep listings, potentially at a trade-off for top dollar."),
     ('Typical 📅', 'Typical', "You're aiming for a standard market timeline, around 1-3 months from listing to close, allowing time for effective marketing and showings without unnecessary delays."),
@@ -19,9 +17,7 @@ condition_choices = [
     ('Showcase ✨', 'Showcase', "The home is either newer construction or recently renovated, and impeccably maintained inside and out. Its contemporary finishes are tasteful and inviting—and might already be staged with the owner's stylish furnishings and curated décor. Its emotionally captivating presentation is media-ready and primed to attract top market attention from discerning buyers.")
 ]
 
-########################################
-# -- Full recommendations matrix starts
-########################################
+# Recommendations matrix (full version as before)
 recommendations = {
     ('ASAP', 'Minimal', 'Needs Work'): {
         'primary': 'Cash',
@@ -187,10 +183,6 @@ recommendations = {
     }
 }
 
-######################################
-# -- App display logic and layout
-######################################
-
 st.title("SELVO – Home of the Five-Fee Fit™")
 st.subheader("Self-Assessment: Which Selvo Listing Tier Fits Me Best?")
 
@@ -204,7 +196,7 @@ with st.expander("Tier Descriptions", expanded=True):
     """)
     st.write("Percentages (%) apply to Selvo listing services only. While a buyer is responsible for compensating their own agent, their offer may include requesting the seller to offset that amount. This is always optional and negotiable—consult your licensed Selvo agent on the pros and cons.")
 
-def slider_with_definitions(header, choices, slider_key):
+def slider_with_expandable_choices(header, choices, slider_key):
     st.markdown(f"#### {header}")
     selected = st.select_slider(
         f"Select your {slider_key.lower()} option:",
@@ -214,19 +206,14 @@ def slider_with_definitions(header, choices, slider_key):
     )
     cols = st.columns(3)
     for i, (label, key, desc) in enumerate(choices):
-        # The label appears above the "?" expander for clarity
-        cols[i].markdown(f"**{label}**")
-        with cols[i].expander("?", expanded=False):
+        with cols[i].expander(label, expanded=False):
             cols[i].markdown(desc)
     return selected
 
-timeline = slider_with_definitions("Timeline: How fast would you like to sell your home?", timeline_choices, "Timeline")
-involvement = slider_with_definitions("Involvement: How much disruption are you willing to tolerate?", involvement_choices, "Involvement")
-condition = slider_with_definitions("Condition: What's the current state of your home?", condition_choices, "Condition")
+timeline = slider_with_expandable_choices("Timeline: How fast would you like to sell your home?", timeline_choices, "Timeline")
+involvement = slider_with_expandable_choices("Involvement: How much disruption are you willing to tolerate?", involvement_choices, "Involvement")
+condition = slider_with_expandable_choices("Condition: What's the current state of your home?", condition_choices, "Condition")
 
-#################################
-# -- Get Recommendation
-#################################
 if st.button("Get Recommendation"):
     timeline_key = [key for (label, key, _) in timeline_choices if label == timeline][0]
     involvement_key = [key for (label, key, _) in involvement_choices if label == involvement][0]
